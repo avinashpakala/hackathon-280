@@ -67,7 +67,7 @@ class DashBoard extends React.Component {
     this.setState({ page: page, redirectFlag: false });
   };
   handleChatClick = () => {
-    window.open("https://www.google.com", "_blank"); // Opens in a new tab
+    window.open("https://cmpe290newllm.streamlit.app", "_blank"); // Opens in a new tab
   };
 
 
