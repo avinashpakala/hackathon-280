@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Slider from "@mui/material/Slider";
+import Annotation from "../common/Annotations";
+
 import { Chart } from "react-google-charts";
 import Dropdown from "react-bootstrap/Dropdown";
 import Col from "react-bootstrap/Col";
@@ -178,31 +180,8 @@ function MangoesPhilippines(props) {
            
           </Row>
         </Card.Body>
-        <Col md={4} hidden={disableAnno}>
-              <label style={{ "font-weight": "bold" }}>Annotations</label>
-              <List>
-                {annotations.map((p) => {
-                  return (
-                    <ListItem>
-                      <ListItemIcon size="sm">
-                        <Arrow />
-                      </ListItemIcon>
-                      <ListItemText fontSize="12" primary={p} secondary={""} />
-                    </ListItem>
-                  );
-                })}
-              </List>
-              <TextField
-                id="outlined-textarea"
-                label="Annotation"
-                placeholder="Annotation"
-                size="small"
-                multiline
-              />
-              <div>&nbsp;</div>
-              <Button variant="contained" onClick={addAnnotations}>
-                + Add Annotation
-              </Button>
+          <Col md={4} hidden={disableAnno}>
+            <Annotation currentPage="mango" />
             </Col>
       </Card>
     </>

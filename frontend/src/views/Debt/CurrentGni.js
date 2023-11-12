@@ -15,6 +15,8 @@ import axios from "axios";
 import backendServer from "../../webConfig";
 import TextField from "@mui/material/TextField";
 import { useSelector, useDispatch } from "react-redux";
+import Annotation from "../common/Annotations";
+
 const years = [
   {
     value: 0,
@@ -175,31 +177,8 @@ function CurrentGni(props) {
                 options={options}
               />
             </Col>
-            <Col md={4} hidden={disableAnno}>
-              <label style={{ "font-weight": "bold" }}>Annotations</label>
-              <List>
-                {annotations.map((p) => {
-                  return (
-                    <ListItem>
-                      <ListItemIcon size="sm">
-                        <Arrow />
-                      </ListItemIcon>
-                      <ListItemText fontSize="12" primary={p} secondary={""} />
-                    </ListItem>
-                  );
-                })}
-              </List>
-              <TextField
-                id="outlined-textarea"
-                label="Annotation"
-                placeholder="Annotation"
-                size="small"
-                multiline
-              />
-              <div>&nbsp;</div>
-              <Button variant="contained" onClick={addAnnotations}>
-                + Add Annotation
-              </Button>
+              <Col md={4} hidden={disableAnno}>
+            <Annotation currentPage="gni" />
             </Col>
           </Row>
         </Card.Body>
