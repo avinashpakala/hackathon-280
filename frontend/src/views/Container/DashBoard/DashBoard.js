@@ -67,7 +67,7 @@ class DashBoard extends React.Component {
     this.setState({ page: page, redirectFlag: false });
   };
   handleChatClick = () => {
-    window.open("https://cmpe290newllm.streamlit.app", "_blank"); // Opens in a new tab
+    window.open("https://cmpe280llmhackathon.streamlit.app", "_blank"); // Opens in a new tab
   };
 
 
@@ -466,10 +466,11 @@ class DashBoard extends React.Component {
         <div>
       
         <div style={iconStyle}>
-          <IconButton onClick={this.handleChatClick}>
+          <IconButton color="success" size="large" onClick={this.handleChatClick}>
             <ChatIcon />
+            <span style={{ marginLeft: '5px' }}>Budget GPT Chat</span>
           </IconButton>
-          <span style={{ marginLeft: '5px' }}>Chat</span>
+         
         </div>
       </div>
       </div>
